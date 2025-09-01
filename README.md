@@ -1,5 +1,8 @@
 Stonks Viewer
+
 Seu controle financeiro, de um jeito simples e prático.
+
+![logo](yess.png)
 
 💻 Sobre o Projeto
 O Stonks Viewer é uma aplicação web simples e intuitiva, desenvolvida para ajudar o usuário a gerenciar sua vida financeira pessoal. Diferente de plataformas de investimento, nosso foco está em dar ao usuário o poder de controlar seu próprio dinheiro, permitindo registrar despesas, receitas, definir metas e acompanhar sua evolução, tudo de forma manual e segura.
