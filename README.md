@@ -60,7 +60,11 @@ Banco de Dados:
 Equipe:
 
 [Lucas Mendes Nóbrega](https://github.com/LucasMN0)
+
 [Quezia Costa](https://github.com/quezinhacosta)
+
 [Arthur Amaral](https://github.com/ArthurAmaral02)
+
 [Lucas Fernandes](https://github.com/Bye-bit)
+
 [Manuela Silveira](https://github.com/ManuSilva12)
