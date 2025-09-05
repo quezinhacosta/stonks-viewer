@@ -17,14 +17,23 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 
 1.Cadastro
+
 2.Login no Sistema
+
 3.Recuperação de Senha
+
 4.Registros de Transações
+
 5.Edição e Exclusão de Transações
+
 6.Categorização de Despesas
+
 7.Metas Financeiras
+
 8.Resumo Financeiro
+
 9.Histórico de Movimentação
+
 10.Armazenamento de Dados
 
 📋 Planejamento - Metodologia Kanban
