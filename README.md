@@ -43,7 +43,9 @@ Adotamos a metodologia Kanban para garantir um fluxo de trabalho contínuo e efi
 
 Nosso Quadro Kanban (Trello) -> [trello](https://trello.com/b/AJuZFnzE/stonks-viewer)
 
-![logo](LogoStonks.png)
+![logo](ImagemTrello.png)
+
+![logo](ImagemUH.png)
 
 Nosso fluxo de trabalho e as histórias de usuário estão visualmente organizados no nosso quadro Kanban.
 
