@@ -49,26 +49,6 @@ Nosso Quadro Kanban (Trello) -> [trello](https://trello.com/b/AJuZFnzE/stonks-vi
 
 Nosso fluxo de trabalho e as histórias de usuário estão visualmente organizados no nosso quadro Kanban.
 
-🛠️ Tecnologias Utilizadas
-
-
-Este projeto foi construído utilizando as seguintes tecnologias:
-
-Frontend:
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Backend:
-
-?
-
-Banco de Dados:
-
-?
 
 Equipe:
 
