@@ -1,11 +1,14 @@
 Stonks Viewer
+-
 
 Seu controle financeiro, de um jeito simples e prático.
 
 ![logo](LogoStonks.png)
+
 ---
 
 💻 Sobre o Projeto
+-
 
 
 O Stonks Viewer é uma aplicação web simples e intuitiva, desenvolvida para ajudar o usuário a gerenciar sua vida financeira pessoal. Diferente de plataformas de investimento, nosso foco está em dar ao usuário o poder de controlar seu próprio dinheiro, permitindo registrar despesas, receitas, definir metas e acompanhar sua evolução, tudo de forma manual e segura.
@@ -13,7 +16,7 @@ Esta é a versão inicial do projeto, que não exige integração bancária, per
 
 ---
 ✨ Funcionalidades
-
+-
 
 As funcionalidades do Stonks Viewer foram definidas através de histórias de usuário, priorizadas para a primeira entrega:
 
@@ -41,9 +44,11 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 11.Excluir Transações
 
 12.Receber Notificação
+
 ---
 
 📋 Planejamento - Metodologia Kanban
+-
 
 
 Adotamos a metodologia Kanban para garantir um fluxo de trabalho contínuo e eficiente, focando em entregar valor de forma incremental.
@@ -58,6 +63,7 @@ Nosso fluxo de trabalho e as histórias de usuário estão visualmente organizad
 
 ---
 Equipe:
+-
 
 [Lucas Mendes Nóbrega](https://github.com/LucasMN0)
 
