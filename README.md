@@ -62,6 +62,20 @@ Nosso Quadro Kanban (Trello) -> [trello](https://trello.com/b/AJuZFnzE/stonks-vi
 Nosso fluxo de trabalho e as histórias de usuário estão visualmente organizados no nosso quadro Kanban.
 
 ---
+
+🔗 Diagrama de atividades do sistema
+-
+Diagramas
+
+---
+⚙️ Issues e bugs tracker
+-
+[Issue/bug tracke](TelaIssue.png)
+
+
+
+
+---
 Equipe:
 -
 
