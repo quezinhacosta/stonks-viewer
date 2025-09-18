@@ -54,7 +54,7 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 ## Demonstração do projeto
 
-[📹 Assista à demonstração do projeto implementado em telas]([https://drive.google.com/file/d/1H4U-BU0Z2CQRijfvoXRQajXQVIFyJdf6/view?usp=drive_link](https://drive.google.com/drive/folders/132CkLo7S20QO9MzFHEMZ4lQgEQ6Jf3hd))
+[📹 Assista à demonstração do projeto implementado em telas](https://drive.google.com/drive/folders/132CkLo7S20QO9MzFHEMZ4lQgEQ6Jf3hd)
 
 ## 🔹 Tela Inicial 
 
