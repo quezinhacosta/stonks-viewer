@@ -1,4 +1,4 @@
-Stonks Viewer
+## Stonks Viewer
 -
 
 Seu controle financeiro, de um jeito simples e prático.
@@ -7,16 +7,21 @@ Seu controle financeiro, de um jeito simples e prático.
 
 ---
 
-💻 Sobre o Projeto
--
+## 💻 Sobre o Projeto
+
 
 
 O Stonks Viewer é uma aplicação web simples e intuitiva, desenvolvida para ajudar o usuário a gerenciar sua vida financeira pessoal. Diferente de plataformas de investimento, nosso foco está em dar ao usuário o poder de controlar seu próprio dinheiro, permitindo registrar despesas, receitas, definir metas e acompanhar sua evolução, tudo de forma manual e segura.
 Esta é a versão inicial do projeto, que não exige integração bancária, permitindo que o usuário tenha total autonomia sobre seus dados.
 
 ---
-✨ Funcionalidades
--
+## ⚙️ Ferramentas tecnológicas
+
+* [Trello](https://trello.com/b/AJuZFnzE/stonks-viewer): utilizado para gestão do projeto;
+* [Figma](https://www.figma.com/design/9BZfKjgWwtxJjx32A4Fvxc/Sem-t%C3%ADtulo?node-id=0-1&p=f&t=ynKXnpVYiLvqvtCk-0): Utilizado para prototipação.
+  
+---
+## ✨ Funcionalidades
 
 As funcionalidades do Stonks Viewer foram definidas através de histórias de usuário, priorizadas para a primeira entrega:
 
@@ -47,29 +52,31 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 ---
 
-📋 Planejamento - Metodologia Kanban
--
+## Demonstração do projeto
+
+[📹 Assista à demonstração do projeto implementado em telas]([https://drive.google.com/file/d/1H4U-BU0Z2CQRijfvoXRQajXQVIFyJdf6/view?usp=drive_link](https://drive.google.com/drive/folders/132CkLo7S20QO9MzFHEMZ4lQgEQ6Jf3hd))
+
+## 🔹 Tela Inicial 
 
 
-Adotamos a metodologia Kanban para garantir um fluxo de trabalho contínuo e eficiente, focando em entregar valor de forma incremental.
 
-Nosso Quadro Kanban (Trello) -> [trello](https://trello.com/b/AJuZFnzE/stonks-viewer)
+
+## 🔹Tela do quadro Kanban
 
 ![logo](ImagemTrello.png)
 
 ![logo](ImagemUH.png)
 
-Nosso fluxo de trabalho e as histórias de usuário estão visualmente organizados no nosso quadro Kanban.
 
 ---
 
-🔗 Diagrama de atividades do sistema
--
-Diagramas
+## 🔗 Diagrama de atividades do sistema
+
+[Diagramas]()
 
 ---
-⚙️ Issues e bugs tracker
--
+## ⚙️ Issues e bugs tracker
+
 [Issue/bug tracke](TelaIssue.png)
 
 
