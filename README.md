@@ -56,10 +56,11 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 [📹 Assista à demonstração do projeto implementado em telas](https://drive.google.com/drive/folders/132CkLo7S20QO9MzFHEMZ4lQgEQ6Jf3hd)
 
-[Imagens do Figma](imagens/)
+[Imagens do Figma](imagensFigma/)
 
+![Login](imagensFigma/Frame1.png)
 
-
+---
 
 ## 🔹Tela do quadro Kanban
 
