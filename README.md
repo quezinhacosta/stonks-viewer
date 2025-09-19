@@ -48,8 +48,6 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 11.Excluir Transações
 
-12.Receber Notificação
-
 ---
 
 ## Demonstração do projeto
