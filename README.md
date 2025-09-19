@@ -72,7 +72,7 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 ## 🔗 Diagrama de atividades do sistema
 
-[Diagramas]()
+[Diagramas](imagens/)
 
 ---
 ## ⚙️ Issues e bugs tracker
