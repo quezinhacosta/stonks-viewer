@@ -8,7 +8,7 @@
 
 /* Fundo da página com o gradiente animado */
 body {
-    background: linear-gradient(-45deg,  #000000, #05703e9d, #85ffb4, #108f41, #ffffff);
+    background: linear-gradient(-45deg,  #000000, #0541259d, #033514, #01331a);
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
     display: flex;
@@ -267,4 +267,30 @@ tbody td {
 .metas-financeiras h3 {
     color: #000000;
     margin-bottom: 15px;
+}
+
+.adicionar-lembrete {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 2px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.adicionar-lembrete button {
+    background: #108f41;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.adicionar-lembrete input,
+.adicionar-lembrete button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
 }

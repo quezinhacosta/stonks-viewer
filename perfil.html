@@ -20,10 +20,11 @@
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#main-content" class="active">Dashboard</a></li>
-          <li><a href="#">Análise</a></li>
+          <li><a href="#main-charts">Análise</a></li>
           <li><a href="#recent-transactions">Últimas movimentações</a></li>
           <li><a href="#metas-financeiras">Metas</a></li>
-          <li><a href="#">Relatórios</a></li>
+          <li><a href="#adicionar-lembrete">Lembretes</a></li>
+          <li><a href="index.html">Sair</a></li>
         </ul>
       </nav>
 
@@ -42,25 +43,20 @@
       <!-- CABEÇALHO -->
       <header class="main-header">
         <h1>Visão Geral Financeira</h1>
-        <div class="search-bar">
-          <input type="text" placeholder="Pesquisar..." />
-          <button>&#x1F50D;</button>
-        </div>
       </header>
 
-      <!-- CARTÕES DE RESUMO -->
       <section class="summary-cards">
         <div class="card">
           <h2>Saldo Atual</h2>
-          <p class="card-value">R$ 0,00</p>
+          <p class="card-value"></p>
         </div>
         <div class="card">
           <h2>Ganhos</h2>
-          <p class="card-value">R$ 0,00</p>
+          <p class="card-value"></p>
         </div>
         <div class="card">
           <h2>Gastos</h2>
-          <p class="card-value">R$ 0,00</p>
+          <p class="card-value"></p>
         </div>
       </section>
 
@@ -92,6 +88,7 @@
             <option value="expense">Gasto fixo</option>
             <option value="extra">Gasto extra</option>
             <option value="income">Ganho fixo</option>
+            <option value="investment">Ganho extra</option>
             <option value="other">Outro</option>
             </select>
             <button type="submit">Adicionar</button>
@@ -184,6 +181,44 @@
           </table>
         </div>
       </section>
+
+      <script>
+        // Lógica para manipulação de metas financeiras
+        const form = document.getElementById("adicionar-meta");
+        const tabela = document.getElementById("metas-financeiras").querySelector("tbody");
+
+        // Escuta o envio do formulário
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Pega os valores digitados
+            const data = form.date.value;
+            const descricao = form.description.value;
+            const valor = parseFloat(form.value.value).toFixed(2);
+            const tipo = form.type.value;
+
+            // Cria a nova linha e as células
+            const novaLinha = document.createElement("tr");
+            const tdValor = document.createElement("td");
+            const tdNome = document.createElement("td");
+            const tdStatus = document.createElement("td");
+
+            // Define o conteúdo
+            tdNome.textContent = descricao;
+
+            tdValor.textContent = `R$ ${valor}`;
+            tdValor.style.color = (tipo === "income") ? "green" : "red";
+
+            // Adiciona as células na linha
+            novaLinha.append(tdNome, tdValor, tdStatus);
+
+            // Adiciona na tabela
+            tabela.appendChild(novaLinha);
+
+            // Limpa o formulário
+            form.reset();
+        });
+      </script>
 
       <!-- ADICIONAR LEMBRETE -->
       <section class="adicionar-lembrete">
