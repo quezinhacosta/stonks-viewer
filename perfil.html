@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="iconpag.png" type="image/png" />
+  <title>Stonks Viewer</title>
+  <link rel="stylesheet" href="perfil.css" />
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">Stonks Viewer</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#main-content" class="active">Dashboard</a></li>
+          <li><a href="#main-charts">Análise</a></li>
+          <li><a href="#recent-transactions">Últimas movimentações</a></li>
+          <li><a href="#metas-financeiras">Metas</a></li>
+          <li><a href="#adicionar-lembrete">Lembretes</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-user-profile">
+        <div class="user-avatar"></div>
+        <div class="user-info">
+          <p class="user-name">Usuário Exemplo</p>
+          <p class="user-email">email@exemplo.com</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content" id="main-content">
+
+      <!-- CABEÇALHO -->
+      <header class="main-header">
+        <h1>Visão Geral Financeira</h1>
+      </header>
+
+      <section class="summary-cards">
+        <div class="card">
+          <h2>Saldo Atual</h2>
+          <p class="card-value"></p>
+        </div>
+        <div class="card">
+          <h2>Ganhos</h2>
+          <p class="card-value"></p>
+        </div>
+        <div class="card">
+          <h2>Gastos</h2>
+          <p class="card-value"></p>
+        </div>
+      </section>
+
+      <section class="recent-transactions" id="recent-transactions">
+        <h3>Últimas Movimentações</h3>
+        <div class="transaction-list-container">
+            <table>
+            <thead>
+                <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-transacoes">
+            </tbody>
+            </table>
+        </div>
+      </section>
+
+      <section class="add-transaction-form">
+        <h3>Adicionar Nova Movimentação</h3>
+        <form id="add-transaction-form">
+            <input type="date" name="date" placeholder="Data" required />
+            <input type="text" name="description" placeholder="Descrição" required />
+            <input type="number" name="value" placeholder="Valor" required />
+            <select name="type" required>
+            <option value="expense">Gasto fixo</option>
+            <option value="extra">Gasto extra</option>
+            <option value="income">Ganho fixo</option>
+            <option value="investment">Ganho extra</option>
+            <option value="other">Outro</option>
+            </select>
+            <button type="submit">Adicionar</button>
+        </form>
+       </section>
+
+      <script>
+        // Seleciona o formulário e a tabela
+        const form = document.getElementById("add-transaction-form");
+        const tabela = document.getElementById("tabela-transacoes");
+
+        // Escuta o envio do formulário
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Pega os valores digitados
+            const data = form.date.value;
+            const descricao = form.description.value;
+            const valor = parseFloat(form.value.value).toFixed(2);
+            const tipo = form.type.value;
+
+            // Cria a nova linha e as células
+            const novaLinha = document.createElement("tr");
+            const tdData = document.createElement("td");
+            const tdDescricao = document.createElement("td");
+            const tdCategoria = document.createElement("td");
+            const tdValor = document.createElement("td");
+
+            // Define o conteúdo
+            tdData.textContent = data;
+            tdDescricao.textContent = descricao;
+
+            // Define o nome da categoria conforme o tipo
+            let categoria = "";
+            switch (tipo) {
+            case "expense": categoria = "Gasto fixo"; break;
+            case "extra": categoria = "Gasto extra"; break;
+            case "income": categoria = "Ganho fixo"; break;
+            case "other": categoria = "Outro"; break;
+            }
+            tdCategoria.textContent = categoria;
+
+            tdValor.textContent = `R$ ${valor}`;
+            tdValor.style.color = (tipo === "income") ? "green" : "red";
+
+            // Adiciona as células na linha
+            novaLinha.append(tdData, tdDescricao, tdCategoria, tdValor);
+
+            // Adiciona na tabela
+            tabela.appendChild(novaLinha);
+
+            // Limpa o formulário
+            form.reset();
+        });
+     </script>
+
+
+      <section class="main-charts">
+        <div class="chart-container">
+          <h3>Gastos Mensais</h3>
+          <div class="chart-placeholder">Gráfico de Barras</div>
+        </div>
+        <div class="chart-container">
+          <h3>Análise de Saldo</h3>
+          <div class="chart-placeholder">Gráfico de Linhas</div>
+        </div>
+      </section>
+
+      <!-- METAS FINANCEIRAS -->
+      <section class="metas-financeiras" id="metas-financeiras">
+        <h3>Metas Financeiras</h3>
+        <form action="adicionar-meta">
+          <input type="text" name="meta" placeholder="Nome da meta" />
+          <input type="number" name="valor-meta" placeholder="Valor da meta" />
+          <button type="submit">Adicionar Meta</button>
+        </form>
+
+        <div class="meta-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Meta</th>
+                <th>Valor</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Linhas de metas serão inseridas aqui -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <script>
+        // Lógica para manipulação de metas financeiras
+        const form = document.getElementById("adicionar-meta");
+        const tabela = document.getElementById("metas-financeiras").querySelector("tbody");
+
+        // Escuta o envio do formulário
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Pega os valores digitados
+            const data = form.date.value;
+            const descricao = form.description.value;
+            const valor = parseFloat(form.value.value).toFixed(2);
+            const tipo = form.type.value;
+
+            // Cria a nova linha e as células
+            const novaLinha = document.createElement("tr");
+            const tdValor = document.createElement("td");
+            const tdNome = document.createElement("td");
+            const tdStatus = document.createElement("td");
+
+            // Define o conteúdo
+            tdNome.textContent = descricao;
+
+            tdValor.textContent = `R$ ${valor}`;
+            tdValor.style.color = (tipo === "income") ? "green" : "red";
+
+            // Adiciona as células na linha
+            novaLinha.append(tdNome, tdValor, tdStatus);
+
+            // Adiciona na tabela
+            tabela.appendChild(novaLinha);
+
+            // Limpa o formulário
+            form.reset();
+        });
+      </script>
+
+      <!-- ADICIONAR LEMBRETE -->
+      <section class="adicionar-lembrete">
+        <h3>Adicionar Lembrete</h3>
+        <form action="adicionar-lembrete" method="POST">
+          <input type="text" name="lembrete" placeholder="Nome" />
+          <input type="date" name="data-lembrete" placeholder="Data" />
+          <input type="text" name="descricao" placeholder="Descrição" />
+          <button type="submit">Adicionar Lembrete</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
