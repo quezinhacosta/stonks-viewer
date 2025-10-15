@@ -3,7 +3,7 @@
 
 Seu controle financeiro, de um jeito simples e prático.
 
-![logo](LogoStonks.png)
+![logo](docs/imagens/LogoStonks.png)
 
 ---
 
@@ -54,29 +54,29 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 [📹 Assista à demonstração do projeto implementado em telas](https://drive.google.com/drive/folders/132CkLo7S20QO9MzFHEMZ4lQgEQ6Jf3hd)
 
-[Imagens do Figma](imagensFigma/)
+[Imagens do Figma](docs/imagensFigma/)
 
-![Login](imagensFigma/Frame1.png)
+![Login](docs/imagensFigma/Frame1.png)
 
 ---
 
 ## 🔹Tela do quadro Kanban
 
-![logo](imagens/ImagemTrello2.png)
+![logo](docs/imagens/ImagemTrello2.png)
 
-![logo](imagens/ImagemUH.2.png)
+![logo](docs/imagens/ImagemUH.2.png)
 
 
 ---
 
 ## 🔗 Diagrama de atividades do sistema
 
-[Diagramas](imagens/)
+[Diagramas](docs/imagens/)
 
 ---
 ## ⚙️ Issues e bugs tracker
 
-[Issue/bug tracke](TelaIssue.png)
+[Issue/bug tracke](docs/imagens/TelaIssue.png)
 
 
 
