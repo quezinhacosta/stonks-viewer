@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../docs/imagens/iconpag.png" type="image/png" />
+  <title>Stonks Viewer</title>
+  <link rel="stylesheet" href="perfil.css" />
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">Stonks Viewer</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#main-content" class="active">Dashboard</a></li>
+          <li><a href="#main-charts">Análise</a></li>
+          <li><a href="#recent-transactions">Últimas movimentações</a></li>
+          <li><a href="#metas-financeiras">Metas</a></li>
+          <li><a href="#adicionar-lembrete">Lembretes</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-user-profile">
+        <div class="user-avatar"></div>
+        <div class="user-info">
+          <p class="user-name">Usuário Exemplo</p>
+          <p class="user-email">email@exemplo.com</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content" id="main-content">
+
+      <!-- CABEÇALHO -->
+      <header class="main-header">
+        <h1>Visão Geral Financeira</h1>
+      </header>
+
+      <!-- RESUMO -->
+      <section class="summary-cards">
+        <div class="card">
+          <h2>Saldo Atual</h2>
+          <p class="card-value"></p>
+        </div>
+        <div class="card">
+          <h2>Ganhos</h2>
+          <p class="card-value"></p>
+        </div>
+        <div class="card">
+          <h2>Gastos</h2>
+          <p class="card-value"></p>
+        </div>
+      </section>
+
+      <!-- ÚLTIMAS TRANSAÇÕES -->
+      <section class="recent-transactions" id="recent-transactions">
+        <h3>Últimas Movimentações</h3>
+        <div class="transaction-list-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-transacoes">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FORMULÁRIO DE NOVA TRANSAÇÃO -->
+      <section class="add-transaction-form">
+        <h3>Adicionar Nova Movimentação</h3>
+        <form id="add-transaction-form">
+          <input type="date" name="date" placeholder="Data" required />
+          <input type="text" name="description" placeholder="Descrição" required />
+          <input type="number" name="value" placeholder="Valor" required />
+          <select name="type" required>
+            <option value="expense">Gasto fixo</option>
+            <option value="extra">Gasto extra</option>
+            <option value="income">Ganho fixo</option>
+            <option value="investment">Ganho extra</option>
+            <option value="other">Outro</option>
+          </select>
+          <button type="submit">Adicionar</button>
+        </form>
+      </section>
+
+      <!-- SCRIPT TRANSAÇÕES -->
+      <script>
+        const formTransacoes = document.getElementById("add-transaction-form");
+        const tabelaTransacoes = document.getElementById("tabela-transacoes");
+
+        formTransacoes.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const data = formTransacoes.date.value;
+          const descricao = formTransacoes.description.value;
+          const valor = parseFloat(formTransacoes.value.value).toFixed(2);
+          const tipo = formTransacoes.type.value;
+
+          const novaLinha = document.createElement("tr");
+          const tdData = document.createElement("td");
+          const tdDescricao = document.createElement("td");
+          const tdCategoria = document.createElement("td");
+          const tdValor = document.createElement("td");
+
+          tdData.textContent = data;
+          tdDescricao.textContent = descricao;
+
+          let categoria = "";
+          switch (tipo) {
+            case "expense": categoria = "Gasto fixo"; break;
+            case "extra": categoria = "Gasto extra"; break;
+            case "income": categoria = "Ganho fixo"; break;
+            case "investment": categoria = "Ganho extra"; break;
+            case "other": categoria = "Outro"; break;
+          }
+          tdCategoria.textContent = categoria;
+
+          tdValor.textContent = `R$ ${valor}`;
+          tdValor.style.color = (tipo === "income" || tipo === "investment") ? "green" : "red";
+
+          novaLinha.append(tdData, tdDescricao, tdCategoria, tdValor);
+          tabelaTransacoes.appendChild(novaLinha);
+
+          formTransacoes.reset();
+        });
+      </script>
+
+      <!-- GRÁFICOS -->
+      <section class="main-charts" id="main-charts">
+        <div class="chart-container">
+          <h3>Gastos Mensais</h3>
+          <div class="chart-placeholder">Gráfico de Barras</div>
+        </div>
+        <div class="chart-container">
+          <h3>Análise de Saldo</h3>
+          <div class="chart-placeholder">Gráfico de Linhas</div>
+        </div>
+      </section>
+
+      <!-- METAS FINANCEIRAS -->
+      <section class="metas-financeiras" id="metas-financeiras">
+        <h3>Metas Financeiras</h3>
+        <form id="adicionar-meta" action="adicionar-meta">
+          <input type="text" name="meta" placeholder="Nome da meta" />
+          <input type="number" name="valor-meta" placeholder="Valor da meta" />
+          <button type="submit">Adicionar Meta</button>
+        </form>
+
+        <div class="meta-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Meta</th>
+                <th>Valor</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-metas">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SCRIPT METAS -->
+      <script>
+        const formMetas = document.getElementById("adicionar-meta");
+        const tabelaMetas = document.getElementById("tabela-metas");
+
+        formMetas.addEventListener("submit", function(event){
+          event.preventDefault();
+
+          const nomeMeta = formMetas.meta.value;
+          const valorMeta = parseFloat(formMetas["valor-meta"].value).toFixed(2);
+
+          const novaLinha = document.createElement("tr");
+          const tdNome = document.createElement("td");
+          const tdValor = document.createElement("td");
+          const tdStatus = document.createElement("td");
+
+          tdNome.textContent = nomeMeta;
+          tdValor.textContent = `R$ ${valorMeta}`;
+          tdStatus.textContent = "Pendente";
+
+          novaLinha.append(tdNome, tdValor, tdStatus);
+          tabelaMetas.appendChild(novaLinha);
+
+          formMetas.reset();
+        });
+      </script>
+
+      <!-- ADICIONAR LEMBRETE -->
+      <section class="adicionar-lembrete" id="adicionar-lembrete">
+        <h3>Adicionar Lembrete</h3>
+        <form id="form-lembrete" action="adicionar-lembrete" method="POST">
+          <input type="text" name="lembrete" placeholder="Nome" />
+          <input type="date" name="data-lembrete" placeholder="Data" />
+          <input type="text" name="descricao" placeholder="Descrição" />
+          <button type="submit">Adicionar Lembrete</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
