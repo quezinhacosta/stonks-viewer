@@ -66,14 +66,12 @@ As funcionalidades do Stonks Viewer foram definidas através de histórias de us
 
 ![logo](docs/imagens/ImagemUH.2.png)
 
-
 ---
 
 ## 🔗 Diagrama de atividades do sistema
 
 [Diagramas](docs/imagens/Diagramas/)
 
----
 ## ⚙️ Issues e bugs tracker
 
 [Issue/bug tracke](docs/imagens/TelaIssue.png)
