@@ -7,7 +7,7 @@
 
 /* Fundo da página com o gradiente animado */
 body {
-    background: linear-gradient(-45deg,  #000000, #063821f3, #0e351b, #0b2b1b, #28442f);
+    background: linear-gradient(-45deg,  #000000, #063821f3, #63ad7c, #37644d, #09902b);
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
     display: flex;
